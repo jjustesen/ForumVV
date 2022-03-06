@@ -1,0 +1,16 @@
+<div class="container">
+  <a href="/toughts/create" class="btn btn-success mb-4 mt-4">New Tought</a>
+  <h3 class="mb-4">Your Toughts</h3>
+  {{#each toughts}}
+    <div class="card mt-4">
+      <div class="card-body">
+        <h4 class="card-title mb-4">{{this.title}}</h4>
+        <a href="/toughts/edit/{{this.id}}" class="btn btn-primary">Edit</a>
+        <form action="/toughts/delete" method="POST" class="d-inline">
+          <input type="hidden" name="id" value="{{this.id}}" />
+          <input type="submit" value="Delete" class="btn btn-danger" />
+        </form>
+      </div>
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <h3 class="mb-4 mt-4">Toughts</h3>
+  {{#each toughts}}
+    <div class="card mt-4">
+      <div class="card-body">
+        <h4 class="card-title mb-4">{{this.title}}</h4>
+        <div class="card-text mb-2">by {{this.User.email}}</div>
+        <div class="card-text mb-2">at {{this.createdAt}}</div>
+      </div>
+    </div>
+  {{/each}}
+</div>

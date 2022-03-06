@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <form action="/toughts/edit" method="POST">
+    <input type="hidden" name="id" value="{{tought.id}}" />
+    <div class="form-outline mb-2">
+      <label class="form-label mb-2" for="title">Tought edit</label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        value="{{tought.title}}"
+      />
+    </div>
+    <a href="/toughts/dashboard" class="btn btn-warning">Back</a>
+    <input type="submit" class="btn btn-primary" value="Edit" />
+  </form>
+</div>

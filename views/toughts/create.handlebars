@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <form action="/toughts/create" method="POST">
+    <!-- Email input -->
+    <div class="form-outline mb-2">
+      <label class="form-label mb-2" for="title">New Tought</label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        placeholder="What are you thinking...?"
+      />
+    </div>
+    <a href="/toughts/dashboard" class="btn btn-warning">Back</a>
+    <input type="submit" class="btn btn-primary" value="Create" />
+  </form>
+</div>
