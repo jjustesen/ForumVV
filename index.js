@@ -39,7 +39,7 @@ app.use(
       secure: false,
       maxAge: 3600000,
       expires: new Date(Date.now() + 3600000),
-      httpOnly: true,
+      httpOnly: false,
     },
   })
 );
@@ -75,6 +75,6 @@ app.get("/", ToughtsController.showToughts);
 conn
   .sync()
   .then(() => {
-    app.listen(3000);
+    app.listen(process.env.PORT || 5000);
   })
   .catch((err) => console.log(err));
