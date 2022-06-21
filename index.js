@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Import Routes
 const toughtsRoutes = require("./routes/ToughtsRoutes");
+const apiController = require("./routes/ApiRoutes");
 const authRoutes = require("./routes/AuthRoutes");
 
 // Import Controller
@@ -68,6 +69,7 @@ app.use((req, res, next) => {
 // Routes
 
 app.use("/toughts", toughtsRoutes);
+app.use("/api", apiController);
 app.use("/", authRoutes);
 
 app.get("/", ToughtsController.showToughts);

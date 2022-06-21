@@ -24,6 +24,7 @@ module.exports = class ToughtsController {
     if (!user) {
       res.redirect("/login");
     }
+    dashboard;
 
     const toughts = user.Toughts.map((result) => result.dataValues);
 
@@ -34,6 +35,26 @@ module.exports = class ToughtsController {
 
   static createTought(req, res) {
     res.render("toughts/create");
+  }
+  static async teste(req, res) {
+    const userId = req.session.userid;
+
+    const user = await User.findOne({
+      where: { id: userId },
+      include: Tought,
+      plain: true,
+    });
+
+    console.log(user);
+    // Just checking if exists
+    if (!user) {
+      return res.json({ data: { status: "user not authorizs" } });
+    }
+    // dashboard;
+
+    const toughts = user.Toughts.map((result) => result.dataValues);
+
+    return res.json({ data: { status: "success", toughts } });
   }
 
   static async createToughtSave(req, res) {

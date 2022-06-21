@@ -9,6 +9,7 @@ router.get("/edit/:id", checkAuth, ToughtsController.editTought);
 router.post("/edit", checkAuth, ToughtsController.editToughtSave);
 router.get("/dashboard", checkAuth, ToughtsController.dashboard);
 router.post("/delete", checkAuth, ToughtsController.deleteTought);
+router.get("/api/teste", ToughtsController.teste);
 router.get("/", ToughtsController.showToughts);
 
 module.exports = router;
